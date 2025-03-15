@@ -1,0 +1,25 @@
+Función quicksort:
+QUICKSORT(arr)
+ LLAMAR a _quicksort(arr, 0, len(arr) - 1)
+  _QUICKSORT(arr, low, high)
+ SI low < high
+ pivot_index =
+ PARTITION(arr, low, high)
+ LLAMAR a _quicksort(arr,
+ low, pivot_index - 1)   # Ordenar
+ sublista izquierda
+ LLAMAR a _quicksort(arr,
+ pivot_index + 1, high)  #
+ Ordenar sublista derecha
+
+Función partition:
+ PARTITION(arr, low, high)
+ pivot = arr[high]  # Tomar el último elemento como pivote
+ i = low - 1        
+# Índice del último elemento menor que el pivote
+ PARA j = low hasta high - 1
+ SI arr[j] <= pivot
+ i = i + 1
+ INTERCAMBIAR arr[i] con arr[j]  # Colocar el elemento menor que el pivote en su lugar
+ INTERCAMBIAR arr[i + 1] con arr[high]  # Colocar el pivote en su posición final
+ RETORNAR i + 1  # Índice donde el pivote está ahora

@@ -1,0 +1,12 @@
+1. Elección del pivote: Selecciona un elemento del arreglo como pivote. 
+Este elemento puede ser elegido de diversas maneras, como el primer elemento, el último elemento o un elemento al azar.
+
+2. Partición: Reordena los elementos del arreglo de manera que todos los elementos menores que el pivote estén a su izquierda y todos los elementos mayores estén a su derecha. 
+Esto se hace de tal manera que el pivote quede en su posición final en el arreglo ordenado. 
+Este paso también divide el arreglo en dos subarreglos alrededor del pivote.
+
+3. Recursión: Aplica recursivamente los pasos 1 y 2 a los subarreglos generados por la partición. 
+Es decir, se repite el proceso de selección de pivote y partición en cada subarreglo hasta que el arreglo esté completamente ordenado. 
+Este paso utiliza la naturaleza del paradigma "dividir y conquistar".
+
+4. Combinación (implícita): No hay una etapa de combinación explícita en QuickSort, ya que los elementos se van ordenando "in-place" durante el proceso de partición.

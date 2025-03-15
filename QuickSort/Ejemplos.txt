@@ -1,0 +1,70 @@
+Ejemplo 1
+5 - 3 - 7 - 6 - 2 - 1 - 4
+
+Comenzamos con la lista completa. El elemento divisor será el 4:
+5 - 3 - 7 - 6 - 2 - 1 - 4
+
+Comparamos con el 5 por la izquierda y el 1 por la derecha.
+5 - 3 - 7 - 6 - 2 - 1 - 4
+
+5 es mayor que cuatro y 1 es menor. Intercambiamos:
+1 - 3 - 7 - 6 - 2 - 5 - 4
+
+Avanzamos por la izquierda y la derecha:
+1 - 3 - 7 - 6 - 2 - 5 - 4
+
+3 es menor que 4: avanzamos por la izquierda. 2 es menor que 4: nos mantenemos ahí.
+1 - 3 - 7 - 6 - 2 - 5 - 4
+
+7 es mayor que 4 y 2 es menor: intercambiamos.
+1 - 3 - 2 - 6 - 7 - 5 - 4
+
+Avanzamos por ambos lados:
+1 - 3 - 2 - 6 - 7 - 5 - 4
+
+En este momento termina el ciclo principal, porque los índices se cruzaron. Ahora intercambiamos lista[i] con lista[sup]:
+1 - 3 - 2 - 4 - 7 - 5 - 6
+
+Aplicamos recursivamente a la sublista de la izquierda (índices 0 - 2). Tenemos lo siguiente:
+1 - 3 - 2
+
+1 es menor que 2: avanzamos por la izquierda. 3 es mayor: avanzamos por la derecha. Como se intercambiaron los índices termina el ciclo. Se intercambia lista[i] con lista[sup]:
+1 - 2 - 3
+
+Al llamar recursivamente para cada nueva sublista (lista[0]-lista[0] y lista[2]-lista[2]) se retorna sin hacer cambios.Para resumir te muestro cómo va quedando la lista:
+Segunda sublista: lista[4]-lista[6]
+7 - 5 - 6
+5 - 7 - 6
+5 - 6 - 7
+
+Para cada nueva sublista se retorna sin hacer cambios (se cruzan los índices).
+Finalmente, al retornar de la primera llamada se tiene el arreglo ordenado:
+1 - 2 - 3 - 4 - 5 - 6 - 7
+
+Ejemplo 2
+Comenzamos con una matriz sin ordenar.
+[ 11, 9, 12, 7, 3]
+
+Elegimos el último valor 3 como elemento pivote.
+[ 11, 9, 12, 7, 3]
+
+El resto de los valores de la matriz son todos mayores que 3 y deben estar en el lado derecho de 3. Intercambia 3 con 11.
+[ 3, 9, 12, 7, 11]
+
+El valor 3 ya está en la posición correcta. Necesitamos ordenar los valores a la derecha del 3. Elegimos el último valor, 11, como el nuevo elemento pivote.
+[ 3, 9, 12, 7, 11]
+
+El valor 7 debe estar a la izquierda del valor pivote 11, y el 12 a su derecha. Mueva el 7 y el 12.
+[ 3, 9, 7, 12, 11]
+
+Intercambia 11 con 12 de modo que los valores inferiores 9 y 7 estén en el lado izquierdo de 11 y 12 en el lado derecho.
+[ 3, 9, 7, 11, 12]
+
+11 y 12 están en las posiciones correctas. Elegimos 7 como elemento pivote en el subconjunto [9, 7], a la izquierda de 11.
+[ 3, 9, 7, 11, 12]
+
+Debemos intercambiar el 9 por el 7.
+[ 3, 7, 9, 11, 12]
+
+Y ahora, la matriz está ordenada.
+

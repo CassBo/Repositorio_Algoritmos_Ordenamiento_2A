@@ -1,0 +1,73 @@
+# Análisis de Complejidad de Quicksort
+
+## Complejidad Teórica
+
+### Peor Caso (Worst Case) - O(n²)
+- Ocurre cuando el pivote siempre es el elemento más grande o más pequeño.
+- Se generan \(n\) niveles de recursión y en cada nivel se procesan aproximadamente \(n\) elementos.
+- Ejemplo: Cuando el arreglo ya está ordenado y se usa el último elemento como pivote.
+
+### Caso Promedio (Average Case) - O(n log n)
+- Se da en la mayoría de los casos con una elección equilibrada del pivote.
+- El pivote divide el arreglo en partes aproximadamente iguales.
+- La profundidad de la recursión es \(O(\log n)\) y cada nivel procesa \(O(n)\) elementos.
+
+### Mejor Caso (Best Case) - O(n log n)
+- Se logra cuando el pivote divide el arreglo en mitades casi iguales en cada iteración.
+- La recursión sigue una estructura balanceada con \(O(\log n)\) niveles.
+- Ejemplo: Cuando el pivote es siempre el elemento medio del arreglo ordenado.
+
+
+## Implementación en Python
+
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr  # O(1) -> Caso base
+
+    pivot = arr[len(arr) // 2]  # O(1) -> Selección del pivote
+    left = [x for x in arr if x < pivot]  # O(n) -> Partición
+    middle = [x for x in arr if x == pivot]  # O(n) -> Partición
+    right = [x for x in arr if x > pivot]  # O(n) -> Partición
+
+    return quicksort(left) + middle + quicksort(right)  # O(n log n) en promedio
+
+
+## Análisis de Complejidad 
+
+### Caso Base
+if len(arr) <= 1:
+    return arr  # O(1)
+
+
+### Selección del Pivote
+
+pivot = arr[len(arr) // 2]  # O(1)
+
+
+### Partición
+
+left = [x for x in arr if x < pivot]  # O(n)
+middle = [x for x in arr if x == pivot]  # O(n)
+right = [x for x in arr if x > pivot]  # O(n)
+
+- Total partición: \(O(n)\)
+
+### Llamadas Recursivas
+quicksort(left) + middle + quicksort(right)  # O(n log n) en promedio
+
+- En promedio: \(O(\log n)\) niveles de recursión.
+- En el peor caso: \(O(n)\) niveles de recursión.
+
+### Complejidad Total
+| Caso   | Complejidad |
+|--------|-------------|
+| Best   | \(O(n \log n)\) |
+|Average | \(O(n \log n)\) |
+| Worst  | \(O(n^2)\) |
+
+
+## Ejemplo de Uso
+
+arr = [10, 7, 8, 9, 1, 5]
+sorted_arr = quicksort(arr)
+print(sorted_arr)  # Salida ordenada

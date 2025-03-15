@@ -1,0 +1,6 @@
+Investigación realizada por:
+Yoselin Leslie Cámara Quijano
+Mia Damaris Ramirez Avila
+
+Quicksort es un algoritmo de ordenamiento que divide una lista en dos sublistas, las ordena y luego las combina. 
+Es un algoritmo recursivo que se basa en la técnica de "divide y vencerás". 
