@@ -1,0 +1,13 @@
+--Investigación realizada por:
+
+Angel Artemio Alpizar Noh
+Yulian Alexander Marín Canul
+Eider Giovanni Lizama Garcia
+
+--Definición
+ 
+Merge Sort es un algoritmo de ordenamiento eficiente y estable que sigue el paradigma 
+"divide y conquista". Su funcionamiento se basa en dividir repetidamente un arreglo en 
+dos mitades hasta que cada subarreglo contenga un solo elemento (o esté vacío), y luego 
+combinar (fusionar) esos subarreglos de manera ordenada para obtener un arreglo
+final completamente ordenado

@@ -1,0 +1,20 @@
+Función merge_sort(arr):
+    si longitud(arr) <= 1:
+        retornar arr
+    medio = longitud(arr) // 2
+    izquierda = merge_sort(arr[0:medio])
+    derecha = merge_sort(arr[medio:])
+    retornar merge(izquierda, derecha)
+
+Función merge(izquierda, derecha):
+    resultado = []
+    i = j = 0
+    mientras i < longitud(izquierda) y j < longitud(derecha):
+        si izquierda[i] <= derecha[j]:
+            agregar izquierda[i] a resultado
+            i += 1
+        sino:
+            agregar derecha[j] a resultado
+            j += 1
+    agregar elementos restantes de izquierda o derecha a resultado
+    retornar resultado

@@ -1,0 +1,39 @@
+Complejidad
+
+Merge Sort tiene una complejidad temporal de O(n log n) en todos los casos
+
+--Mejor caso: O(n log n) (cuando ya está ordenado y se siguen haciendo fusiones)
+
+--Peor caso: O(n log n) (cuando el arreglo está completamente desordenado)
+
+--Caso promedio: O(n log n)
+
+Recuerda que debe estár de la siguiente manera:
+
+--Cálculo por linea:
+
+    def merge_sort(arr):                     # O(n log n)
+        if len(arr) <= 1:                     # O(1)
+            return arr                         # O(1)
+        mid = len(arr) // 2                    # O(1)
+        left = merge_sort(arr[:mid])           # O(n log n)
+        right = merge_sort(arr[mid:])          # O(n log n)
+        return merge(left, right)              # O(n)
+
+    def merge(left, right):                    # O(n)
+        result = []                            # O(1)
+        while left and right:                  # O(n)
+            if left[0] < right[0]:             # O(1)
+                result.append(left.pop(0))     # O(1)
+            else:                              
+                result.append(right.pop(0))    # O(1)
+        result.extend(left if left else right) # O(n)
+        return result                          # O(n)
+
+# Análisis de Complejidad de Merge Sort
+
+T(n) = 2T(n/2) + O(n)
+
+Total = c1(n) + c2(n-1) + c3(n log n) + c4(n-1) = O(n log n)
+
+# O(n log n) es la complejidad de la función.
