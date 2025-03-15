@@ -1,0 +1,15 @@
+--Investigación realizada por:
+
+Cassiel Hernandez Botello
+Gerardo Gongora Vargas
+Carlos Eligio Poxtan Sanchez
+Carlos Humberto Martinez Canto
+
+--Definición
+
+El algoritmo Bubble Sort es un método simple de ordenamiento que funciona comparando elementos 
+adyacentes y realizando intercambios si están en el orden incorrecto.
+
+Aunque es fácil de entender e implementar, no es eficiente para listas grandes debido a su complejidad de tiempo O(n²).
+
+Sin embargo, es un buen ejemplo para aprender sobre algoritmos de ordenamiento y la lógica de comparación e intercambio.

@@ -1,0 +1,59 @@
+1. Inicio:
+
+Comienza con una lista de elementos, supongamos que tenemos la siguiente lista desordenada:
+
+lista = [64, 34, 25, 12, 22, 11, 90]
+
+
+2.Comparación:
+
+Compara el primer par de elementos adyacentes. Si el primer elemento es mayor que el segundo, intercámbialos.
+
+for i in range(len(lista) - 1):
+    if lista[i] > lista[i + 1]:
+        lista[i], lista[i + 1] = lista[i + 1], lista[i]  # Intercambio
+
+
+3. Iteración:
+
+Mueve al siguiente par de elementos adyacentes y repite el paso 2.
+
+for i in range(len(lista) - 1):
+    for j in range(len(lista) - 1 - i):  # Se reduce el rango en cada pasada
+        if lista[j] > lista[j + 1]:
+            lista[j], lista[j + 1] = lista[j + 1], lista[j]  # Intercambio
+
+
+4. Repetición:
+
+Continúa este proceso hasta que llegues al final de la lista. Esto completa una pasada.
+
+for i in range(len(lista)):
+    for j in range(len(lista) - 1 - i):
+        if lista[j] > lista[j + 1]:
+            lista[j], lista[j + 1] = lista[j + 1], lista[j]  # Intercambio
+
+
+5. Verificación:
+
+Si no se realizaron intercambios en la pasada, la lista está ordenada y el algoritmo termina. Si se realizaron intercambios, repite desde el paso 2.
+
+for i in range(len(lista)):
+    swapped = False  # Bandera para verificar si hubo intercambio
+    for j in range(len(lista) - 1 - i):
+        if lista[j] > lista[j + 1]:
+            lista[j], lista[j + 1] = lista[j + 1], lista[j]  # Intercambio
+            swapped = True  # Se realizó un intercambio
+    if not swapped:  # Si no hubo intercambios, la lista está ordenada
+        break
+
+
+6. Fin:
+
+La lista está ordenada, por ende al hacer print:
+
+print("Lista ordenada:", lista)
+
+La salida esperada será la siguiente:
+
+Lista ordenada: [11, 12, 22, 25, 34, 64, 90]

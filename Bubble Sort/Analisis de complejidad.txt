@@ -1,0 +1,34 @@
+Complejidad
+
+--Mejor Caso (Best Case):
+Es el escenario más favorable para el algoritmo. Para Bubble Sort, esto ocurre cuando la lista ya está ordenada. En este caso, el algoritmo solo necesita una pasada para verificar que no hay intercambios.
+
+Complejidad: ( O(n) )
+
+
+--Peor Caso (Worst Case):
+Es el escenario menos favorable. Para Bubble Sort, esto ocurre cuando la lista está ordenada en orden inverso. En este caso, el algoritmo necesita realizar el máximo número de comparaciones e intercambios.
+
+Complejidad: ( O(n^2) )
+
+
+--Caso Promedio (Average Case):
+Es el escenario típico que se espera en la mayoría de las ejecuciones. Para Bubble Sort, se asume que los elementos están en un orden aleatorio.
+
+Complejidad: ( O(n^2) )
+
+
+--Cálculo por linea:
+
+def bubble_sort(arr):
+    n = len(arr)                                                              # Complejidad: O(1)
+    for i in range(n):                                                        # Complejidad: O(n)
+        for j in range(0, n - i - 1):                                         # Complejidad: O(n^2)
+            if arr[j] > arr[j + 1]:                                           # Complejidad: O(n^2)
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]                       # Complejidad: O(n^2)
+
+
+Total=c1 (1) + c2 (n) + c2n (n^2) + c3 (n^2) + c4 (n^2)=
+O(n^2)  
+
+#O(n^2) es la complejidad de la función

@@ -1,0 +1,32 @@
+# Ejemplo 1
+
+
+function bubbleSort(arr):
+    n = length(arr)
+    for i from 0 to n-1:
+        swapped = false
+        for j from 0 to n-i-2:
+            if arr[j] > arr[j+1]:
+                swap(arr[j], arr[j+1])
+                swapped = true
+        if not swapped:
+            break
+
+
+#Ejemplo 2
+
+ALGORITMO BubbleSort(lista)
+    n ← longitud(lista)
+    PARA i ← 0 HASTA n-1 HACER
+        intercambiado ← FALSO
+        PARA j ← 0 HASTA n-i-2 HACER
+            SI lista[j] > lista[j + 1] ENTONCES
+                intercambiar(lista[j], lista[j + 1])
+                intercambiado ← VERDADERO
+            FIN SI
+        FIN PARA
+        SI NO intercambiado ENTONCES
+            SALIR
+        FIN SI
+    FIN PARA
+FIN ALGORITMO
