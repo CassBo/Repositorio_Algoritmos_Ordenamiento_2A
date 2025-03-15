@@ -1,0 +1,26 @@
+PROCEDIMIENTO OrdenamientoSeleccion(A, n)
+    PARA i ← 0 HASTA n - 2 HACER
+        minIndex ← i
+        PARA j ← i + 1 HASTA n - 1 HACER
+            SI A[j] < A[minIndex] ENTONCES
+                minIndex ← j
+            FIN SI
+        FIN PARA
+        SI minIndex ≠ i ENTONCES
+            intercambiar(A[i], A[minIndex])
+        FIN SI
+    FIN PARA
+FIN PROCEDIMIENTO
+
+ALGORITMO SelectionSortOptimizado(lista, tamaño)
+    PARA i DESDE 0 HASTA tamaño - 2 HACER
+        min_idx ← i  
+        PARA j DESDE i + 1 HASTA tamaño - 1 HACER
+            SI lista[j] < lista[min_idx] ENTONCES
+                min_idx ← j  
+            FIN SI
+        FIN PARA
+        intercambiar(lista[i], lista[min_idx])  // Siempre intercambia
+    FIN PARA
+FIN ALGORITMO
+

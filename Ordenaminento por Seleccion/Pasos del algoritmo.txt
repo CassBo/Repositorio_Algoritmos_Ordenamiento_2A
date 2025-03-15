@@ -1,0 +1,45 @@
+1. Inicio:
+Comienza con una lista de elementos desordenados.
+
+lista = [64, 34, 25, 12, 22, 11, 90]
+2. Búsqueda del mínimo:
+Encuentra el elemento más pequeño en la lista y colócalo en la primera posición.
+
+
+min_idx = 0
+for j in range(1, len(lista)):  
+    if lista[j] < lista[min_idx]:  
+        min_idx = j  # Se encuentra un nuevo mínimo  
+lista[0], lista[min_idx] = lista[min_idx], lista[0]  # Intercambio  
+3. Iteración:
+Avanza al siguiente elemento y busca el mínimo en la sublista restante.
+
+
+for i in range(len(lista) - 1):
+    min_idx = i  
+    for j in range(i + 1, len(lista)):  
+        if lista[j] < lista[min_idx]:  
+            min_idx = j  # Se encuentra un nuevo mínimo  
+    lista[i], lista[min_idx] = lista[min_idx], lista[i]  # Intercambio  
+4. Repetición:
+Continúa este proceso hasta que todos los elementos estén en su posición correcta.
+
+for i in range(len(lista) - 1):
+    min_idx = i  
+    for j in range(i + 1, len(lista)):  
+        if lista[j] < lista[min_idx]:  
+            min_idx = j  
+    lista[i], lista[min_idx] = lista[min_idx], lista[i]  
+5. Verificación:
+El algoritmo continúa hasta que todos los elementos han sido posicionados correctamente.
+for i in range(len(lista) - 1):
+    min_idx = i  
+    for j in range(i + 1, len(lista)):  
+        if lista[j] < lista[min_idx]:  
+            min_idx = j  
+    if min_idx != i:  # Verifica si hubo intercambio  
+        lista[i], lista[min_idx] = lista[min_idx], lista[i]  
+6. Fin:
+La lista está ordenada. Al imprimirla, se obtiene:
+print("Lista ordenada:", lista)
+Lista ordenada: [11, 12, 22, 25, 34, 64, 90]

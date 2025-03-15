@@ -1,0 +1,34 @@
+Complejidad
+Mejor Caso (Best Case)
+El mejor caso ocurre cuando la lista ya está ordenada. Sin embargo, Selection Sort sigue recorriendo toda la lista y realizando comparaciones, aunque no realice intercambios.
+
+Complejidad: 
+𝑂(𝑛^2)
+
+Peor Caso (Worst Case)
+El peor caso ocurre cuando la lista está en orden inverso. Selection Sort realiza el mismo número de comparaciones en todos los casos, pero en este escenario también realiza el máximo número de intercambios.
+
+Complejidad: 𝑂(𝑛^2)
+
+
+Caso Promedio (Average Case)
+El caso promedio ocurre cuando los elementos están en un orden aleatorio. Selection Sort siempre realiza el mismo número de comparaciones sin importar el orden inicial.
+
+Complejidad:𝑂(𝑛)
+
+Cálculo por línea
+def selection_sort(arr):
+    n = len(arr)                                                      # Complejidad: O(1)
+    for i in range(n):                                                # Complejidad: O(n)
+        min_idx = i                                                   # Complejidad: O(n)
+        for j in range(i + 1, n):                                     # Complejidad: O(n^2)
+            if arr[j] < arr[min_idx]:                                 # Complejidad: O(n^2)
+                min_idx = j                                           # Complejidad: O(n^2)
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]                   # Complejidad: O(n)
+Total:
+
+𝑂(1)+𝑂(𝑛)+𝑂(𝑛^2)+𝑂(𝑛^2)+𝑂(𝑛^2)+𝑂(𝑛)=𝑂(𝑛^2)
+
+Por lo tanto, la complejidad del algoritmo Selection Sort es:
+𝑂(𝑛^2)
+en todos los casos.

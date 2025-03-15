@@ -1,0 +1,12 @@
+Por:
+
+Luis Mario Berdugo Rivero
+Jaime Manuel Escobar Mallen
+Alejandro Dario Gonzales Tovar 
+Manuel Alejandro Cano Lara 
+
+
+Definicion
+Algoritmo de ordenamiento que funciona seleccionando repetidamente el 
+elemento más pequeño de la lista y colocándolo en su posición correcta.
+ Se basa en encontrar el valor mínimo en cada iteración y moverlo al inicio de la lista.

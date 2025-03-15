@@ -1,0 +1,39 @@
+Ejemplo 1: Lista desordenada
+Lista inicial: [5, 3, 8, 4, 2]
+
+Pasos
+Paso 1: Buscar el Minimo en [5, 3, 8, 4, 2] -- Minimo: 2 (intercambiar con el primer elemento)
+Lista después del paso 1: [2, 3, 8, 4, 5]
+
+Paso 2: Buscar el Minimo en [3, 8, 4, 5] -- Minimo: 3 (ya esta en su lugar, no se intercambia)
+Lista después del paso 2: [2, 3, 8, 4, 5]
+
+Paso 3: Buscar el Minimo en [8, 4, 5] -- Minimo: 4 (intercambiar con 8)
+Lista después del paso 3: [2, 3, 4, 8, 5]
+
+Paso 4: Buscar el Minimo en [8, 5] -- Minimo: 5 (intercambiar con 8)
+Lista después del paso 4: [2, 3, 4, 5, 8]
+
+Paso 5: Solo queda un elemento, ya esta ordenado.
+La lista final es [2, 3, 4, 5, 8].
+
+Ejemplo 2: Lista ordenada inverso
+Lista inicial: [9, 7, 5, 3, 1]
+
+Pasos
+Paso 1: Buscar el Minimo en [9, 7, 5, 3, 1] -- Minimo: 1 (intercambiar con 9)
+Lista después del paso 1: [1, 7, 5, 3, 9]
+
+Paso 2: Buscar el Minimo en [7, 5, 3, 9] -- Minimo: 3 (intercambiar con 7)
+Lista después del paso 2: [1, 3, 5, 7, 9]
+
+Paso 3: Buscar el Minimo en [5, 7, 9] -- Minimo: 5 (ya esta en su lugar)
+Lista después del paso 3: [1, 3, 5, 7, 9]
+
+Paso 4: Buscar el Minimo en [7, 9] -- Minimo: 7 (ya esta en su lugar)
+Lista después del paso 4: [1, 3, 5, 7, 9]
+
+Paso 5: La lista ya esta ordenada.
+
+Lista final: [1, 3, 5, 7, 9]
+
