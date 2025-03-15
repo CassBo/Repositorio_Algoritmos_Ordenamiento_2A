@@ -1,0 +1,128 @@
+1. Inicio:
+Comienza con una lista de elementos, supongamos que tenemos la siguiente lista desordenada:
+
+Ejemplo 1:
+lista = [7, 2, 6, 4]
+
+Ejemplo 2:
+lista = [5, 2, 4, 6, 1, 3]
+
+2. Comparación:
+Se toma el segundo elemento de la lista como la clave y se compara con los elementos anteriores. Si es menor, se desplazan los mayores a la derecha para hacer espacio.
+
+for j in range(1, len(lista)):  
+    key = lista[j]  
+    i = j - 1  
+    while i >= 0 and lista[i] > key:  
+        lista[i + 1] = lista[i]  # Desplazamiento  
+        i -= 1  
+    lista[i + 1] = key  # Insertar en posición correcta
+
+3. Iteración:
+Se repite el proceso para cada elemento de la lista hasta llegar al final.
+
+Ejemplo 1 (Pasadas detalladas):
+Lista inicial: [7, 2, 6, 4]
+
+Primera pasada:
+
+key = 2, se compara con 7
+7 es mayor, se mueve
+Se inserta 2 en su posición correcta
+Lista: [2, 7, 6, 4]
+Segunda pasada:
+
+key = 6, se compara con 7
+7 es mayor, se mueve
+Se inserta 6 en su posición correcta
+Lista: [2, 6, 7, 4]
+Tercera pasada:
+
+key = 4, se compara con 7, 6 y 2
+7 es mayor, se mueve
+6 es mayor, se mueve
+2 no es mayor, se detiene
+Se inserta 4 en su posición correcta
+Lista: [2, 4, 6, 7]
+
+4. Repetición:
+Se sigue este proceso para cada elemento restante en la lista hasta que esté completamente ordenada.
+
+Ejemplo 2 (Pasadas detalladas):
+Lista inicial: [5, 2, 4, 6, 1, 3]
+
+Primera pasada:
+
+key = 2, se compara con 5
+5 es mayor, se mueve
+Lista: [2, 5, 4, 6, 1, 3]
+Segunda pasada:
+
+key = 4, se compara con 5
+5 es mayor, se mueve
+Lista: [2, 4, 5, 6, 1, 3]
+Tercera pasada:
+
+key = 6, se compara con 5
+5 no es mayor, se mantiene en su lugar
+Lista: [2, 4, 5, 6, 1, 3]
+Cuarta pasada:
+
+key = 1, se compara con 6, 5, 4, 2
+Todos son mayores, se mueven
+Lista: [1, 2, 4, 5, 6, 3]
+Quinta pasada:
+
+key = 3, se compara con 6, 5, 4, 2
+6, 5, 4 son mayores, se mueven
+Lista: [1, 2, 3, 4, 5, 6]
+
+5. Verificación:
+Si en alguna iteración no hubo desplazamientos, significa que la lista ya está ordenada y el algoritmo termina.
+
+for j in range(1, len(lista)):
+    key = lista[j]
+    i = j - 1
+    swapped = False  # Bandera para verificar si hubo intercambio
+    while i >= 0 and lista[i] > key:
+        lista[i + 1] = lista[i]
+        i -= 1
+        swapped = True  # Se realizó un intercambio
+    lista[i + 1] = key
+    if not swapped:  # Si no hubo intercambios, la lista está ordenada
+        break
+
+6. Fin:
+La lista está ordenada, por lo que al imprimir obtenemos:
+
+Salida esperada para el Ejemplo 1:
+Lista ordenada: [2, 4, 6, 7]
+
+Salida esperada para el Ejemplo 2:
+Lista ordenada: [1, 2, 3, 4, 5, 6]
+
+def insertion_sort(lista):
+    for j in range(1, len(lista)):  
+        key = lista[j]  
+        i = j - 1  
+        while i >= 0 and lista[i] > key:  
+            lista[i + 1] = lista[i]  # Desplazamiento  
+            i -= 1  
+        lista[i + 1] = key  # Insertamos en su posición correcta
+        print(f"Paso {j}: {lista}")  # Mostrar cada paso  
+
+    return lista
+
+# Ejemplo 1
+print("Ejemplo 1:")
+lista1 = [7, 2, 6, 4]
+print(f"Lista inicial: {lista1}")
+insertion_sort(lista1)
+print(f"Lista ordenada: {lista1}\n")
+
+# Ejemplo 2
+print("Ejemplo 2:")
+lista2 = [5, 2, 4, 6, 1, 3]
+print(f"Lista inicial: {lista2}")
+insertion_sort(lista2)
+print(f"Lista ordenada: {lista2}")
