@@ -1,0 +1,25 @@
+Ejemplo 1
+
+def insertionSort(arr):
+    n = len(arr)
+    for j in range(1, n):  # (1) Iteramos desde el segundo elemento hasta el último
+        key = arr[j]        # (2) Guardamos el elemento actual como clave
+        i = j - 1           # (3) Inicializamos i como el índice anterior a j
+        while i >= 0 and arr[i] > key:  # (4) Movemos elementos mayores que 'key' una posición a la derecha
+            arr[i + 1] = arr[i]  # (5) Desplazamos el elemento actual a la derecha
+            i -= 1               # (6) Retrocedemos en la lista
+        arr[i + 1] = key          # (7) Insertamos 'key' en su posición correcta
+
+Ejemplo 2
+
+ALGORITMO InsertionSort(lista)
+    n ← longitud(lista)
+    PARA j ← 1 HASTA n-1 HACER   // (1) Iteramos desde el segundo elemento hasta el último
+        clave ← lista[j]         // (2) Guardamos el elemento actual como clave
+        i ← j - 1                // (3) Inicializamos i como el índice anterior a j
+        MIENTRAS i ≥ 0 Y lista[i] > clave HACER  // (4) Movemos elementos mayores que 'clave' una posición a la derecha
+            lista[i + 1] ← lista[i]  // (5) Desplazamos el elemento actual a la derecha
+            i ← i - 1                // (6) Retrocedemos en la lista
+        FIN MIENTRAS
+        lista[i + 1] ← clave        // (7) Insertamos 'clave' en su posición correcta
+FIN ALGORITMO
